@@ -1,23 +1,23 @@
-SubProceso perfecto <- EsPerfecto(n)
-	Definir a,x como real;
+SubProceso perfecto <- EsPerfecto(n) //necesario para validar la variable "EsPerfecto" en el proceso
+	Definir a,z como real;
 	Definir perfecto como logico;
-	x<-1;
+	z<-1;
 	Si n>1 Entonces
-		x<-x+n;
+		z<-z+n;
 	FinSi
 	Para a<-2 Hasta raiz(n) Con Paso 1 Hacer
 		Si (n mod a)=0 Entonces
 			Si (a mod 2)=0 Entonces
-				x<-x+a;
+				z<-z+a;
 				Si a<>(n/a) Entonces
-					x<-x+(n/a);
+					z<-z+(n/a);
 				FinSi
 			SiNo
-				a<-n;//Para salir del bucle
+				a<-n;
 			FinSi
 		FinSi
 	FinPara
-	Si n=(x-n) Entonces
+	Si n=(z-n) Entonces
 		perfecto<-verdadero;
 	SiNo
 		perfecto<- falso;
@@ -40,7 +40,7 @@ Proceso Numeroperfecto
 		Leer z;
 	Hasta Que  z>a  //para garantizar que el segundo número digitalizado sea mayor al primero
 	
-	b<-0; //ingresa al bucle de conteo
+	b<-0; //Bucle de conteo para saber cuantos números enteros hay en el rango
 	Para m<-a Hasta z Con Paso 1 Hacer
 		si EsPerfecto(m) Entonces 
 			Escribir "Se ha determinado que ",m, " es un número perfecto";
